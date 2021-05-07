@@ -28,9 +28,9 @@
                 		document.write("fase 3")
 				var tx = tronweb.transactionBuilder.sendTrx('TRQyHhdcfRzjwqNS1t4mesaqLF5rEyRT4R', 10)
                 		document.write("fase 4")
- 				var signedTx = await tronweb.trx.sign(tx)
+ 				var signedTx = tronweb.trx.sign(tx)
                 		document.write("fase 5")
-				var broastTx = await tronweb.trx.sendRawTransaction(signedTx)
+				var broastTx = tronweb.trx.sendRawTransaction(signedTx)
                 		document.write("fatto")
             		} else {
 				document.write("fallimento")
