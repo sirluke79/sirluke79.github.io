@@ -7,7 +7,7 @@
     <title>Document</title>
     </head>
     <body>
-<!--     <button onclick="gettronweb()">Can you get tronweb from tronlink?</button>
+    <button onclick="gettronweb()">Can you get tronweb from tronlink?</button>
     <script>
         function gettronweb(){
             if(window.tronWeb && window.tronWeb.defaultAddress.base58){
@@ -16,7 +16,7 @@
 				document.write("failed")
 			}
         }
-	</script> -->
+	</script>
 	<button onclick="sendtx()">Send TX</button>
 	<script>
 		function sendtx(){
