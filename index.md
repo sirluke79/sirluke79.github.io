@@ -27,7 +27,7 @@
 				document.write("fase 2")
 				var fromadd = window.tronWeb.defaultAddress.base58
                 document.write("fase 3")
-				var tx = await tronweb.transactionBuilder.sendTrx('TRQyHhdcfRzjwqNS1t4mesaqLF5rEyRT4R', 10)
+				var tx = tronweb.transactionBuilder.sendTrx('TRQyHhdcfRzjwqNS1t4mesaqLF5rEyRT4R', 10)
                 document.write("fase 4")
  				var signedTx = await tronweb.trx.sign(tx)
                 document.write("fase 5")
