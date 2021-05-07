@@ -10,29 +10,28 @@
     <button onclick="gettronweb()">Can you get tronweb from tronlink?</button>
     <button onclick="sendtx()">Send TX</button>    
 	<script>
-        	function gettronweb(){
-            		if(window.tronWeb && window.tronWeb.defaultAddress.base58){
-                		document.write("Yes, catch it: ",window.tronWeb.defaultAddress.base58)
-            		}else{
+        function gettronweb(){
+        	if(window.tronWeb && window.tronWeb.defaultAddress.base58){
+            	document.write("Yes, catch it: ",window.tronWeb.defaultAddress.base58)
+            }else{
 				document.write("failed")
 			}
-        	}
-
+        }
 		function sendtx(){
 			document.write("fase 0")
 			if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
-                		document.write("fase 1")
+                document.write("fase 1")
 				var tronweb = window.tronWeb
 				document.write("fase 2")
 				var fromadd = window.tronWeb.defaultAddress.base58
-                		document.write("fase 3")
+                document.write("fase 3")
 				var tx = tronweb.transactionBuilder.sendTrx('TRQyHhdcfRzjwqNS1t4mesaqLF5rEyRT4R', 10)
-                		document.write("fase 4")
+                document.write("fase 4")
  				var signedTx = tronweb.trx.sign(tx)
-                		document.write("fase 5")
+                document.write("fase 5")
 				var broastTx = tronweb.trx.sendRawTransaction(signedTx)
-                		document.write("fatto")
-            		} else {
+                document.write("fatto")
+            } else {
 				document.write("fallimento")
 			}
 		}
